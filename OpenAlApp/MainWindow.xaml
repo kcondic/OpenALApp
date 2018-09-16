@@ -1,0 +1,102 @@
+﻿<Window x:Class="OpenAlApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenAlApp"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Closed="Release_Resources"
+        Title="OpenAL aplikacija" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="281*"/>
+            <ColumnDefinition Width="115*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Play" HorizontalAlignment="Left" Margin="350,124,0,0" VerticalAlignment="Top" Width="75" Click="Play_Click" Height="20"/>
+        <CheckBox Content="Ponavljanje" HorizontalAlignment="Left" Margin="345,235,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_UnChecked" Height="15" Width="80"/>
+        <Button Content="Pauza" HorizontalAlignment="Left" Margin="350,164,0,0" VerticalAlignment="Top" Width="75" Click="Pause_Click" Height="20"/>
+        <Button Content="Stop" HorizontalAlignment="Left" Margin="350,199,0,0" VerticalAlignment="Top" Width="75" Click="Stop_Click" Height="20"/>
+        <Grid Margin="93,47,309,264">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="79*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Pozicija izvora" Width="78" RenderTransformOrigin="0.5,0.5" Margin="38,-2,0,83" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="2" ScaleX="2"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBox x:Name="SourcePositionX" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" IsReadOnly="False" Margin="0,27,0,0" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="SourcePositionY" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" RenderTransformOrigin="2.241,2.863" Margin="53.316,27,0,0" Grid.Column="1"/>
+            <TextBox x:Name="SourcePositionZ" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" Margin="111.316,27,0,0" Grid.Column="1"/>
+            <Button Content="Primijeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="69" Height="35" Click="Set_Source_Position_Click" Margin="40,63,0,0" Grid.Column="1"/>
+        </Grid>
+        <Grid Margin="498,47,134,264" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="79*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Pozicija slušača" Width="89" RenderTransformOrigin="0.5,0.5" Margin="41,-2,0,83" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="2" ScaleX="2"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBox x:Name="ListenerPositionX" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" IsReadOnly="False" Margin="0,27,0,0" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="ListenerPositionY" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" RenderTransformOrigin="2.241,2.863" Margin="53.316,27,0,0" Grid.Column="1"/>
+            <TextBox x:Name="ListenerPositionZ" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" Margin="111.316,27,0,0" Grid.Column="1"/>
+            <Button Content="Primijeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="69" Height="35" Click="Set_Listener_Position_Click" Margin="40,63,0,0" Grid.Column="1"/>
+        </Grid>
+        <Grid Margin="93,199,309,112">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="79*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="78" RenderTransformOrigin="0.5,0.5" Margin="38,-2,0,83" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="2" ScaleX="2"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform><Run Text="Brzina izvora"/></TextBlock>
+            <TextBox x:Name="SourceVelocityX" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" IsReadOnly="False" Margin="0,27,0,0" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="SourceVelocityY" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" RenderTransformOrigin="2.241,2.863" Margin="53.316,27,0,0" Grid.Column="1"/>
+            <TextBox x:Name="SourceVelocityZ" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" Margin="111.316,27,0,0" Grid.Column="1"/>
+            <Button Content="Primijeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="69" Height="35" Click="Set_Source_Velocity_Click" Margin="40,63,0,0" Grid.Column="1"/>
+        </Grid>
+        <Grid Margin="498,199,134,112" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="79*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="78" RenderTransformOrigin="0.5,0.5" Margin="38,-2,0,83" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="2" ScaleX="2"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform><Run Text="Brzina slušača"/></TextBlock>
+            <TextBox x:Name="ListenerVelocityX" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" IsReadOnly="False" Margin="0,27,0,0" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="ListenerVelocityY" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" RenderTransformOrigin="2.241,2.863" Margin="53.316,27,0,0" Grid.Column="1"/>
+            <TextBox x:Name="ListenerVelocityZ" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="36" Margin="111.316,27,0,0" Grid.Column="1"/>
+            <Button Content="Primijeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="69" Height="35" Click="Set_Listener_Velocity_Click" Margin="40,63,0,0" Grid.Column="1"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="369,260,0,0" TextWrapping="Wrap" Text="Jakost" VerticalAlignment="Top"/>
+        <TextBox x:Name="SourceGain" HorizontalAlignment="Left" Margin="366,281,0,107" TextWrapping="Wrap" Text="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="40"/>
+        <Button Content="Primijeni" HorizontalAlignment="Left" Margin="350,318,0,0" VerticalAlignment="Top" Width="75" Click="Set_Source_Gain_Click"/>
+    </Grid>
+</Window>
