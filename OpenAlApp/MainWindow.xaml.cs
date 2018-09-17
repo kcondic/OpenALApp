@@ -58,9 +58,12 @@ namespace OpenAlApp
 
         private void Set_Source_Position_Click(object sender, RoutedEventArgs e)
         {
-            if (!float.TryParse(SourcePositionX.Text.Replace('.',','), out var x) || 
-                !float.TryParse(SourcePositionY.Text.Replace('.', ','), out var y) ||
-                !float.TryParse(SourcePositionZ.Text.Replace('.', ','), out var z))
+            var x = 0.0f;
+            var y = 0.0f;
+            var z = 0.0f;
+            if (!float.TryParse(SourcePositionX.Text.Replace('.',','), out x) || 
+                !float.TryParse(SourcePositionY.Text.Replace('.', ','), out y) ||
+                !float.TryParse(SourcePositionZ.Text.Replace('.', ','), out z))
                 MessageBox.Show("Neispravan unos!");
             else
                 AL.Source(_source, ALSource3f.Position, x, y, z);
@@ -68,9 +71,12 @@ namespace OpenAlApp
 
         private void Set_Source_Velocity_Click(object sender, RoutedEventArgs e)
         {
-            if (!float.TryParse(SourceVelocityX.Text.Replace('.', ','), out var x) ||
-                !float.TryParse(SourceVelocityY.Text.Replace('.', ','), out var y) ||
-                !float.TryParse(SourceVelocityZ.Text.Replace('.', ','), out var z))
+            var x = 0.0f;
+            var y = 0.0f;
+            var z = 0.0f;
+            if (!float.TryParse(SourceVelocityX.Text.Replace('.', ','), out x) ||
+                !float.TryParse(SourceVelocityY.Text.Replace('.', ','), out y) ||
+                !float.TryParse(SourceVelocityZ.Text.Replace('.', ','), out z))
                 MessageBox.Show("Neispravan unos!");
             else
                 AL.Source(_source, ALSource3f.Velocity, x, y, z);
@@ -78,9 +84,12 @@ namespace OpenAlApp
 
         private void Set_Listener_Position_Click(object sender, RoutedEventArgs e)
         {
-            if (!float.TryParse(ListenerPositionX.Text.Replace('.', ','), out var x) ||
-                !float.TryParse(ListenerPositionY.Text.Replace('.', ','), out var y) ||
-                !float.TryParse(ListenerPositionZ.Text.Replace('.', ','), out var z))
+            var x = 0.0f;
+            var y = 0.0f;
+            var z = 0.0f;
+            if (!float.TryParse(ListenerPositionX.Text.Replace('.', ','), out x) ||
+                !float.TryParse(ListenerPositionY.Text.Replace('.', ','), out y) ||
+                !float.TryParse(ListenerPositionZ.Text.Replace('.', ','), out z))
                 MessageBox.Show("Neispravan unos!");
             else
                 AL.Listener(ALListener3f.Position, x, y, z);
@@ -88,9 +97,12 @@ namespace OpenAlApp
 
         private void Set_Listener_Velocity_Click(object sender, RoutedEventArgs e)
         {
-            if (!float.TryParse(ListenerVelocityX.Text.Replace('.', ','), out var x) ||
-                !float.TryParse(ListenerVelocityY.Text.Replace('.', ','), out var y) ||
-                !float.TryParse(ListenerVelocityZ.Text.Replace('.', ','), out var z))
+            var x = 0.0f;
+            var y = 0.0f;
+            var z = 0.0f;
+            if (!float.TryParse(ListenerVelocityX.Text.Replace('.', ','), out x) ||
+                !float.TryParse(ListenerVelocityY.Text.Replace('.', ','), out y) ||
+                !float.TryParse(ListenerVelocityZ.Text.Replace('.', ','), out z))
                 MessageBox.Show("Neispravan unos!");
             else
                 AL.Listener(ALListener3f.Velocity, x, y, z);
@@ -98,7 +110,8 @@ namespace OpenAlApp
 
         private void Set_Source_Gain_Click(object sender, RoutedEventArgs e)
         {
-            if (!float.TryParse(SourceGain.Text.Replace('.', ','), out var num))
+            var num = 0.0f;
+            if (!float.TryParse(SourceGain.Text.Replace('.', ','), out num))
                 MessageBox.Show("Neispravan unos!");
             else
                 AL.Source(_source, ALSourcef.Gain, num);
